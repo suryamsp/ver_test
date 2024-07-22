@@ -23,7 +23,7 @@ app.use(cors());
 
 
 export const client = new MongoClient(mongo_url);
-console.log("mongodb is connected ");
+console.log("mongodb is connected");
 
 
 try {
