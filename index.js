@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import express from 'express';
 import { MongoClient } from "mongodb";
 import cors from "cors";
