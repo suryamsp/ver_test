@@ -41,8 +41,14 @@ const startServer = async () => {
   }
 };
 
-startServer();
+// For serverless environments, export the handler function
+export const handler = async (event) => {
+  // Simulate express handling
+  // You would need to adapt this part to your specific serverless platform
+  await startServer();
+};
 
+// Shutdown handling
 const shutdown = async () => {
   console.log("Shutting down server...");
   await client.close();
