@@ -29,6 +29,20 @@ app.get("/",async function (request, response) {
         response.send(store);
 });
 
+    app.listen(PORT, () => console.log(`The server started on port: ${PORT} ✨✨`));
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+    process.exit(1);
+  }
+};
 
+startServer();
 
-app.listen(PORT,()=> console.log(`server started : ${PORT}`));
+const shutdown = async () => {
+  console.log("Shutting down server...");
+  await client.close();
+  process.exit(0);
+};
+
+process.on('SIGTERM', shutdown);
+process.on('SIGINT', shutdown);
